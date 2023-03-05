@@ -1,0 +1,71 @@
+.main-area {
+    width: 800px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    /* width: 95%; */
+    height: auto;
+    margin: 10px;
+    border: 3px solid white;
+    border-radius: 20px;
+}
+
+.users-profile {
+    margin: 10px;
+    position: relative;
+    width: 350px;
+    border: 3px solid white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+h1 {
+    font-size: 25px;
+    padding: 10px;
+    margin: 0 10px;
+}
+
+.account-balance {
+    display: flex;
+    flex-direction: row;
+}
+.account-balance p {
+    padding: 10px;
+    margin: 0 10px;
+}
+
+.account-balance p:last-child {
+    margin-left: 90px;
+}
+.transactions {
+    padding: 10px;
+    margin: 0 10px;
+}
+.transactions .upper {
+    width: 100%;
+}
+.transactions .upper input {
+    margin-left: 60px;
+}
+
+.transactions .lower {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 10px 0;
+}
+.transactions .lower .transfer-btn {
+    margin-right: 40px;
+}
+
+.users-profile .delete-btn {
+    position: absolute;
+    top: -25px;
+    right: -25px;
+    width: 50px;
+    height: 50px;
+    border: 2px solid white;
+    border-radius: 25px;
+}

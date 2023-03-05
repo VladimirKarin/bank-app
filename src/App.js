@@ -1,24 +1,46 @@
-import logo from './logo.svg';
+import { useState } from 'react';
+import AddUserForm from './Components/AddUserForm';
 import './App.css';
+import TotalCount from './Components/TotalCount';
+import UserProfile from './Components/UserProfile';
+import ContextData from './ContextData';
+import { v4 as uuidv4 } from 'uuid';
 
 function App() {
+
+  const [user, setUser] = useState([]);
+  const [usersFirstName, setUsersFirstName] = useState([]);
+  const [usersLastName, setUsersLastName] = useState([]);
+  const [usersBalance, setUsersBalance] = useState(0);
+  const [totalUsersCount, setTotalUsersCount] = useState(0);
+  const [totalMoneyCount, setTotalMoneyCount] = useState(0);
+  // const [messages, setMessages] = useState();
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ContextData.Provider value={{
+      user,
+      setUser,
+      usersFirstName,
+      setUsersFirstName,
+      usersLastName,
+      setUsersLastName,
+      usersBalance,
+      totalUsersCount,
+      setTotalUsersCount,
+      totalMoneyCount,
+      setTotalMoneyCount,
+
+    }}>
+
+      <div className="App">
+        <header className="App-header">
+          <TotalCount />
+          <AddUserForm />
+          {/* <UserProfile /> */}
+        </header>
+      </div>
+    </ContextData.Provider>
   );
 }
 
